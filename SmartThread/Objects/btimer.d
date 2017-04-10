@@ -1,0 +1,15 @@
+.\objects\btimer.o: Source\bTimer.c
+.\objects\btimer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\btimer.o: Source\bTimer.h
+.\objects\btimer.o: Source\bList.h
+.\objects\btimer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\btimer.o: Source\bConfig.h
+.\objects\btimer.o: Source\bTypes.h
+.\objects\btimer.o: Source\bThread.h
+.\objects\btimer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\btimer.o: Source\bSem.h
+.\objects\btimer.o: Source\bEvent.h
+.\objects\btimer.o: Source\switch.h
+.\objects\btimer.o: Source\bMemBlock.h
+.\objects\btimer.o: Source\bCondition.h
+.\objects\btimer.o: Source\bMutex.h

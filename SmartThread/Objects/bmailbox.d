@@ -1,0 +1,12 @@
+.\objects\bmailbox.o: Source\bMailBox.c
+.\objects\bmailbox.o: Source\bMailBox.h
+.\objects\bmailbox.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\bmailbox.o: Source\bTypes.h
+.\objects\bmailbox.o: Source\bMutex.h
+.\objects\bmailbox.o: Source\bEvent.h
+.\objects\bmailbox.o: Source\bList.h
+.\objects\bmailbox.o: Source\bConfig.h
+.\objects\bmailbox.o: Source\switch.h
+.\objects\bmailbox.o: Source\bThread.h
+.\objects\bmailbox.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\bmailbox.o: Source\bCondition.h

@@ -1,0 +1,31 @@
+#ifndef SMARTTHREAD_BCONFIG_H
+#define SMARTTHREAD_BCONFIG_H
+#include <stdint.h>
+
+#define STACK_SIZE 1024
+#define SLICE_NUM 2
+#define PRIORITY_MAX 32
+#define SYS_TICK_PEROID_MS 10
+#define THREAD_COUNT_IN_THREADPOOL  5
+
+
+
+#define THREAD_PRIO_IN_THREADPOOL 1
+
+#define THREAD_DEFINE_BY_USER 2 
+
+#define TASK_NUM 5
+
+#define THREADPOOL_EXIST 1
+
+#define TIMER_NUM   3
+
+
+
+
+
+
+
+
+
+#endif

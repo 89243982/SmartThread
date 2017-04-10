@@ -1,0 +1,11 @@
+.\objects\bflaggroup.o: Source\bFlagGroup.c
+.\objects\bflaggroup.o: Source\bFlagGroup.h
+.\objects\bflaggroup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\bflaggroup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\bflaggroup.o: Source\bEvent.h
+.\objects\bflaggroup.o: Source\bList.h
+.\objects\bflaggroup.o: Source\bConfig.h
+.\objects\bflaggroup.o: Source\bTypes.h
+.\objects\bflaggroup.o: Source\switch.h
+.\objects\bflaggroup.o: Source\bThread.h
+.\objects\bflaggroup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

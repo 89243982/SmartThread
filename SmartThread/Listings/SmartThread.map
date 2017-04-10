@@ -1,0 +1,1444 @@
+Component: ARM Compiler 5.06 update 3 (build 300) Tool: armlink [4d35c9]
+
+==============================================================================
+
+Section Cross References
+
+    switch.o(.emb_text) refers to bthread.o(.data) for currentThread
+    switch.o(i.bthread_set_systick_period) refers to system_armcm3.o(.data) for SystemCoreClock
+    bthread.o(i.SysTick_Handler) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bthread.o(i.SysTick_Handler) refers to bthread.o(i.bthread_systick_handler) for bthread_systick_handler
+    bthread.o(i.SysTick_Handler) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bthread.o(i.bbitmap_get_firstset) refers to bthread.o(.constdata) for quickFindTable
+    bthread.o(i.bthread_create) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    bthread.o(i.bthread_create) refers to blist.o(i.bnode_init) for bnode_init
+    bthread.o(i.bthread_create) refers to bthread.o(i.bthread_stack_init) for bthread_stack_init
+    bthread.o(i.bthread_create) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bthread.o(i.bthread_delay) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bthread.o(i.bthread_delay) refers to bthread.o(i.bthread_unready) for bthread_unready
+    bthread.o(i.bthread_delay) refers to bthread.o(i.bthread_time_wait) for bthread_time_wait
+    bthread.o(i.bthread_delay) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bthread.o(i.bthread_delay) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bthread.o(i.bthread_delay) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthread_get_readyed) refers to bthread.o(i.bbitmap_get_firstset) for bbitmap_get_firstset
+    bthread.o(i.bthread_get_readyed) refers to blist.o(i.blist_first) for blist_first
+    bthread.o(i.bthread_get_readyed) refers to bthread.o(.data) for threadsBMapRdyed
+    bthread.o(i.bthread_get_readyed) refers to blist.o(.bss) for threadsRdy
+    bthread.o(i.bthread_ready) refers to blist.o(i.blist_add_last) for blist_add_last
+    bthread.o(i.bthread_ready) refers to bthread.o(i.bbitmap_set) for bbitmap_set
+    bthread.o(i.bthread_ready) refers to blist.o(.bss) for threadsRdy
+    bthread.o(i.bthread_ready) refers to bthread.o(.data) for threadsBMapRdyed
+    bthread.o(i.bthread_schedule) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bthread.o(i.bthread_schedule) refers to bthread.o(i.bthread_get_readyed) for bthread_get_readyed
+    bthread.o(i.bthread_schedule) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bthread.o(i.bthread_schedule) refers to switch.o(i.bthread_switch) for bthread_switch
+    bthread.o(i.bthread_schedule) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthread_stack_used) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthread_systick_handler) refers to bthread.o(i.bthreads_delayed_wakeup) for bthreads_delayed_wakeup
+    bthread.o(i.bthread_systick_handler) refers to btimer.o(i.btimer_in_systick) for btimer_in_systick
+    bthread.o(i.bthread_systick_handler) refers to bthread.o(i.bthread_unready) for bthread_unready
+    bthread.o(i.bthread_systick_handler) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bthread.o(i.bthread_systick_handler) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bthread.o(i.bthread_systick_handler) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthread_time_wait) refers to bthread.o(i.bthread_get_ticks) for bthread_get_ticks
+    bthread.o(i.bthread_time_wait) refers to blist.o(i.blist_add_last) for blist_add_last
+    bthread.o(i.bthread_time_wait) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthread_time_wait) refers to blist.o(.bss) for threadsDelayed
+    bthread.o(i.bthread_time_wakeup) refers to blist.o(i.blist_remove) for blist_remove
+    bthread.o(i.bthread_time_wakeup) refers to blist.o(.bss) for threadsDelayed
+    bthread.o(i.bthread_unready) refers to blist.o(i.blist_remove) for blist_remove
+    bthread.o(i.bthread_unready) refers to blist.o(i.blist_count) for blist_count
+    bthread.o(i.bthread_unready) refers to bthread.o(i.bbitmap_clear) for bbitmap_clear
+    bthread.o(i.bthread_unready) refers to blist.o(.bss) for threadsRdy
+    bthread.o(i.bthread_unready) refers to bthread.o(.data) for threadsBMapRdyed
+    bthread.o(i.bthreads_delayed_wakeup) refers to bthread.o(i.bthread_time_wakeup) for bthread_time_wakeup
+    bthread.o(i.bthreads_delayed_wakeup) refers to bevent.o(i.bevent_remove) for bevent_remove
+    bthread.o(i.bthreads_delayed_wakeup) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bthread.o(i.bthreads_delayed_wakeup) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bthread.o(i.bthreads_delayed_wakeup) refers to blist.o(.bss) for threadsDelayed
+    bthread.o(i.bthreads_delayed_wakeup) refers to bthread.o(.data) for currentThread
+    bthread.o(i.bthreads_start) refers to switch.o(i.bthread_run_first) for bthread_run_first
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to blist.o(i.threads_all_list_init) for threads_all_list_init
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to bthread.o(i.bbitmap_init) for bbitmap_init
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to bmemblock.o(i.bmemblock_all_init) for bmemblock_all_init
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to bsem.o(i.bsem_all_init) for bsem_all_init
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to bthread.o(i.bthread_create) for bthread_create
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to aeabi_atexit.o(.text) for __aeabi_atexit
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to main.o(.bss) for smarthread
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to bthread.o(.data) for threadsBMapRdyed
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to main.o(i._ZN11smartthread11SmartThread6setEnvEPv) for smartthread::SmartThread::setEnv(void*)
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to main.o(i._ZN11smartthread11SmartThread13timers_threadEPv) for smartthread::SmartThread::timers_thread(void*)
+    main.o(i.__sti___8_Main_cpp_b48cbc19) refers to main.o(i._ZN11smartthread11SmartThreadD1Ev) for smartthread::SmartThread::~SmartThread()
+    main.o(i.main) refers to bthread.o(i.bthread_get_readyed) for bthread_get_readyed
+    main.o(i.main) refers to bthread.o(i.bthreads_start) for bthreads_start
+    main.o(i.main) refers to bthread.o(.data) for nextThread
+    main.o(.ARM.exidx) refers to main.o(i.main) for i.main
+    main.o(.ARM.exidx) refers to main.o(i.__sti___8_Main_cpp_b48cbc19) for i.__sti___8_Main_cpp_b48cbc19
+    main.o(.init_array) refers to main.o(i.__sti___8_Main_cpp_b48cbc19) for __sti___8_Main_cpp_b48cbc19
+    main.o(.init_array) refers to init_aeabi.o(.text) for __cpp_initialize__aeabi_
+    blist.o(i.blist_remove) refers to blist.o(i.bnode_init) for bnode_init
+    blist.o(i.blist_remove_all) refers to blist.o(i.bnode_init) for bnode_init
+    blist.o(i.blist_remove_all) refers to blist.o(i.blist_init) for blist_init
+    blist.o(i.blist_remove_first) refers to blist.o(i.bnode_init) for bnode_init
+    blist.o(i.threads_all_list_init) refers to blist.o(i.threads_readyed_init) for threads_readyed_init
+    blist.o(i.threads_all_list_init) refers to blist.o(i.threads_delayed_init) for threads_delayed_init
+    blist.o(i.threads_all_list_init) refers to blist.o(i.timers_init) for timers_init
+    blist.o(i.threads_delayed_init) refers to blist.o(i.blist_init) for blist_init
+    blist.o(i.threads_delayed_init) refers to blist.o(.bss) for threadsDelayed
+    blist.o(i.threads_readyed_init) refers to blist.o(i.blist_init) for blist_init
+    blist.o(i.threads_readyed_init) refers to blist.o(.bss) for threadsRdy
+    blist.o(i.timers_init) refers to blist.o(i.blist_init) for blist_init
+    blist.o(i.timers_init) refers to blist.o(.bss) for timers_rt
+    bevent.o(i.bevent_init) refers to blist.o(i.blist_init) for blist_init
+    bevent.o(i.bevent_remove) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bevent.o(i.bevent_remove) refers to blist.o(i.blist_remove) for blist_remove
+    bevent.o(i.bevent_remove) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bevent.o(i.bevent_remove_all) refers to blist.o(i.blist_remove_all) for blist_remove_all
+    bevent.o(i.bevent_wait) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bevent.o(i.bevent_wait) refers to bthread.o(i.bthread_unready) for bthread_unready
+    bevent.o(i.bevent_wait) refers to blist.o(i.blist_add_last) for blist_add_last
+    bevent.o(i.bevent_wait) refers to bthread.o(i.bthread_time_wait) for bthread_time_wait
+    bevent.o(i.bevent_wait) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bevent.o(i.bevent_wait) refers to bthread.o(.data) for currentThread
+    bevent.o(i.bevent_wait_count) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bevent.o(i.bevent_wait_count) refers to blist.o(i.blist_count) for blist_count
+    bevent.o(i.bevent_wait_count) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bevent.o(i.bevent_wakeup) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bevent.o(i.bevent_wakeup) refers to blist.o(i.blist_remove_first) for blist_remove_first
+    bevent.o(i.bevent_wakeup) refers to bthread.o(i.bthread_time_wakeup) for bthread_time_wakeup
+    bevent.o(i.bevent_wakeup) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bevent.o(i.bevent_wakeup) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    btimer.o(i.btimer_in_systick) refers to btimer.o(i.btimer_run_rt) for btimer_run_rt
+    btimer.o(i.btimer_in_systick) refers to btimer.o(i.btimer_run_nrt_in_systick) for btimer_run_nrt_in_systick
+    btimer.o(i.btimer_init) refers to blist.o(i.bnode_init) for bnode_init
+    btimer.o(i.btimer_init) refers to bthread.o(i.bthread_get_ticks) for bthread_get_ticks
+    btimer.o(i.btimer_init) refers to blist.o(i.blist_add_last) for blist_add_last
+    btimer.o(i.btimer_init) refers to blist.o(.bss) for timers_rt
+    btimer.o(i.btimer_run_nrt_in_systick) refers to bsem.o(i.bsem_notify) for bsem_notify
+    btimer.o(i.btimer_run_nrt_in_systick) refers to blist.o(.bss) for timers_nrt
+    btimer.o(i.btimer_run_nrt_in_systick) refers to bsem.o(.bss) for semTick
+    btimer.o(i.btimer_run_nrt_in_thread) refers to bsem.o(i.bsem_wait) for bsem_wait
+    btimer.o(i.btimer_run_nrt_in_thread) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    btimer.o(i.btimer_run_nrt_in_thread) refers to blist.o(i.blist_remove) for blist_remove
+    btimer.o(i.btimer_run_nrt_in_thread) refers to bmemblock.o(i.bmemblock_release_mem) for bmemblock_release_mem
+    btimer.o(i.btimer_run_nrt_in_thread) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    btimer.o(i.btimer_run_nrt_in_thread) refers to bsem.o(.bss) for semTick
+    btimer.o(i.btimer_run_nrt_in_thread) refers to blist.o(.bss) for timers_nrt
+    btimer.o(i.btimer_run_nrt_in_thread) refers to bmemblock.o(.bss) for memTimerUser
+    btimer.o(i.btimer_run_rt) refers to blist.o(i.blist_remove) for blist_remove
+    btimer.o(i.btimer_run_rt) refers to bmemblock.o(i.bmemblock_release_mem) for bmemblock_release_mem
+    btimer.o(i.btimer_run_rt) refers to blist.o(.bss) for timers_rt
+    btimer.o(i.btimer_run_rt) refers to bmemblock.o(.bss) for memTimerUser
+    bsem.o(i.bsem_all_init) refers to bsem.o(i.bsem_init) for bsem_init
+    bsem.o(i.bsem_all_init) refers to bsem.o(.bss) for semTick
+    bsem.o(i.bsem_init) refers to bevent.o(i.bevent_init) for bevent_init
+    bsem.o(i.bsem_notify) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bsem.o(i.bsem_notify) refers to bevent.o(i.bevent_wait_count) for bevent_wait_count
+    bsem.o(i.bsem_notify) refers to bevent.o(i.bevent_wakeup) for bevent_wakeup
+    bsem.o(i.bsem_notify) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bsem.o(i.bsem_notify) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bsem.o(i.bsem_notify) refers to bthread.o(.data) for currentThread
+    bsem.o(i.bsem_wait) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bsem.o(i.bsem_wait) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bsem.o(i.bsem_wait) refers to bevent.o(i.bevent_wait) for bevent_wait
+    bsem.o(i.bsem_wait) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bsem.o(i.bsem_wait) refers to bthread.o(.data) for currentThread
+    bmutex.o(i.bmutexlock_init) refers to bevent.o(i.bevent_init) for bevent_init
+    bmutex.o(i.bmutexlock_lock) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_lock) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_lock) refers to bthread.o(i.bthread_unready) for bthread_unready
+    bmutex.o(i.bmutexlock_lock) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bmutex.o(i.bmutexlock_lock) refers to bevent.o(i.bevent_wait) for bevent_wait
+    bmutex.o(i.bmutexlock_lock) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bmutex.o(i.bmutexlock_lock) refers to bthread.o(.data) for currentThread
+    bmutex.o(i.bmutexlock_lock_this) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_lock_this) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_release) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_release) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_unlock) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_unlock) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_unlock) refers to bthread.o(i.bthread_unready) for bthread_unready
+    bmutex.o(i.bmutexlock_unlock) refers to bthread.o(i.bthread_ready) for bthread_ready
+    bmutex.o(i.bmutexlock_unlock) refers to bevent.o(i.bevent_wait_count) for bevent_wait_count
+    bmutex.o(i.bmutexlock_unlock) refers to bevent.o(i.bevent_wakeup) for bevent_wakeup
+    bmutex.o(i.bmutexlock_unlock) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bmutex.o(i.bmutexlock_unlock) refers to bthread.o(.data) for currentThread
+    bmutex.o(i.bmutexlock_wait) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_wait) refers to bevent.o(i.bevent_wait) for bevent_wait
+    bmutex.o(i.bmutexlock_wait) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_wait_count) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_wait_count) refers to bevent.o(i.bevent_wait_count) for bevent_wait_count
+    bmutex.o(i.bmutexlock_wait_count) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bmutex.o(i.bmutexlock_wakeup) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bmutex.o(i.bmutexlock_wakeup) refers to bevent.o(i.bevent_wakeup) for bevent_wakeup
+    bmutex.o(i.bmutexlock_wakeup) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bcondition.o(i.bcondition_notify) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bcondition.o(i.bcondition_notify) refers to bmutex.o(i.bmutexlock_wait_count) for bmutexlock_wait_count
+    bcondition.o(i.bcondition_notify) refers to bmutex.o(i.bmutexlock_release) for bmutexlock_release
+    bcondition.o(i.bcondition_notify) refers to bmutex.o(i.bmutexlock_wakeup) for bmutexlock_wakeup
+    bcondition.o(i.bcondition_notify) refers to bmutex.o(i.bmutexlock_lock_this) for bmutexlock_lock_this
+    bcondition.o(i.bcondition_notify) refers to bmutex.o(i.bmutexlock_wait) for bmutexlock_wait
+    bcondition.o(i.bcondition_notify) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bcondition.o(i.bcondition_notify) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bcondition.o(i.bcondition_notify) refers to bthread.o(.data) for currentThread
+    bcondition.o(i.bcondition_wait) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bcondition.o(i.bcondition_wait) refers to bmutex.o(i.bmutexlock_release) for bmutexlock_release
+    bcondition.o(i.bcondition_wait) refers to bmutex.o(i.bmutexlock_wait_count) for bmutexlock_wait_count
+    bcondition.o(i.bcondition_wait) refers to bmutex.o(i.bmutexlock_wakeup) for bmutexlock_wakeup
+    bcondition.o(i.bcondition_wait) refers to bmutex.o(i.bmutexlock_lock_this) for bmutexlock_lock_this
+    bcondition.o(i.bcondition_wait) refers to bmutex.o(i.bmutexlock_wait) for bmutexlock_wait
+    bcondition.o(i.bcondition_wait) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bcondition.o(i.bcondition_wait) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bcondition.o(i.bcondition_wait) refers to bthread.o(.data) for currentThread
+    bmemblock.o(i.bmemblock_all_init) refers to bmemblock.o(i.bmemblock_init) for bmemblock_init
+    bmemblock.o(i.bmemblock_all_init) refers to bmemblock.o(.bss) for memThreadsThreadPool
+    bmemblock.o(i.bmemblock_get_mem) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bmemblock.o(i.bmemblock_get_mem) refers to bcondition.o(i.bcondition_wait) for bcondition_wait
+    bmemblock.o(i.bmemblock_get_mem) refers to blist.o(i.blist_remove_first) for blist_remove_first
+    bmemblock.o(i.bmemblock_get_mem) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bmemblock.o(i.bmemblock_init) refers to exit.o(.text) for exit
+    bmemblock.o(i.bmemblock_init) refers to blist.o(i.blist_init) for blist_init
+    bmemblock.o(i.bmemblock_init) refers to bmutex.o(i.bmutexlock_init) for bmutexlock_init
+    bmemblock.o(i.bmemblock_init) refers to bcondition.o(i.bcondition_init) for bcondition_init
+    bmemblock.o(i.bmemblock_init) refers to blist.o(i.bnode_init) for bnode_init
+    bmemblock.o(i.bmemblock_init) refers to blist.o(i.blist_add_last) for blist_add_last
+    bmemblock.o(i.bmemblock_release_mem) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bmemblock.o(i.bmemblock_release_mem) refers to blist.o(i.bnode_init) for bnode_init
+    bmemblock.o(i.bmemblock_release_mem) refers to blist.o(i.blist_add_last) for blist_add_last
+    bmemblock.o(i.bmemblock_release_mem) refers to bcondition.o(i.bcondition_notify) for bcondition_notify
+    bmemblock.o(i.bmemblock_release_mem) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bthreadpool.o(i.btask_init) refers to blist.o(i.bnode_init) for bnode_init
+    bthreadpool.o(i.btask_init) refers to bthreadpool.o(i.bthreadpool_put_task) for bthreadpool_put_task
+    bthreadpool.o(i.bthreadpool_init) refers to blist.o(i.blist_init) for blist_init
+    bthreadpool.o(i.bthreadpool_init) refers to bmutex.o(i.bmutexlock_init) for bmutexlock_init
+    bthreadpool.o(i.bthreadpool_init) refers to bcondition.o(i.bcondition_init) for bcondition_init
+    bthreadpool.o(i.bthreadpool_init) refers to bmemblock.o(i.bmemblock_get_mem) for bmemblock_get_mem
+    bthreadpool.o(i.bthreadpool_init) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    bthreadpool.o(i.bthreadpool_init) refers to bthread.o(i.bthread_create) for bthread_create
+    bthreadpool.o(i.bthreadpool_init) refers to bmemblock.o(.bss) for memThreadsPool
+    bthreadpool.o(i.bthreadpool_init) refers to bthreadpool.o(i.bthreadpool_run) for bthreadpool_run
+    bthreadpool.o(i.bthreadpool_put_task) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bthreadpool.o(i.bthreadpool_put_task) refers to blist.o(i.blist_add_last) for blist_add_last
+    bthreadpool.o(i.bthreadpool_put_task) refers to bcondition.o(i.bcondition_notify) for bcondition_notify
+    bthreadpool.o(i.bthreadpool_put_task) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bthreadpool.o(i.bthreadpool_run) refers to bthreadpool.o(i.bthreadpool_take_task) for bthreadpool_take_task
+    bthreadpool.o(i.bthreadpool_take_task) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bthreadpool.o(i.bthreadpool_take_task) refers to bcondition.o(i.bcondition_wait) for bcondition_wait
+    bthreadpool.o(i.bthreadpool_take_task) refers to blist.o(i.blist_count) for blist_count
+    bthreadpool.o(i.bthreadpool_take_task) refers to blist.o(i.blist_remove_first) for blist_remove_first
+    bthreadpool.o(i.bthreadpool_take_task) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bmailbox.o(i.bmaibox_get_msg) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bmailbox.o(i.bmaibox_get_msg) refers to bcondition.o(i.bcondition_wait) for bcondition_wait
+    bmailbox.o(i.bmaibox_get_msg) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bmailbox.o(i.bmail_send_msg) refers to bmutex.o(i.bmutexlock_lock) for bmutexlock_lock
+    bmailbox.o(i.bmail_send_msg) refers to bmutex.o(i.bmutexlock_unlock) for bmutexlock_unlock
+    bmailbox.o(i.bmail_send_msg) refers to bcondition.o(i.bcondition_notify) for bcondition_notify
+    bmailbox.o(i.bmailbox_init) refers to bmutex.o(i.bmutexlock_init) for bmutexlock_init
+    bmailbox.o(i.bmailbox_init) refers to bcondition.o(i.bcondition_init) for bcondition_init
+    bflaggroup.o(i.bflaggroup_check_consume) refers to bthread.o(.data) for currentThread
+    bflaggroup.o(i.bflaggroup_init) refers to bevent.o(i.bevent_init) for bevent_init
+    bflaggroup.o(i.bflaggroup_set_flags) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bflaggroup.o(i.bflaggroup_set_flags) refers to bevent.o(i.bevent_wait_count) for bevent_wait_count
+    bflaggroup.o(i.bflaggroup_set_flags) refers to bevent.o(i.bevent_wakeup) for bevent_wakeup
+    bflaggroup.o(i.bflaggroup_set_flags) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    bflaggroup.o(i.bflaggroup_set_flags) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bflaggroup.o(i.bflaggroup_set_flags) refers to bthread.o(.data) for currentThread
+    bflaggroup.o(i.bflaggroup_take_flags) refers to switch.o(i.bthread_enter_critical) for bthread_enter_critical
+    bflaggroup.o(i.bflaggroup_take_flags) refers to bflaggroup.o(i.bflaggroup_check_consume) for bflaggroup_check_consume
+    bflaggroup.o(i.bflaggroup_take_flags) refers to switch.o(i.bthread_exit_critical) for bthread_exit_critical
+    bflaggroup.o(i.bflaggroup_take_flags) refers to bevent.o(i.bevent_wait) for bevent_wait
+    bflaggroup.o(i.bflaggroup_take_flags) refers to bthread.o(i.bthread_schedule) for bthread_schedule
+    functions.o(i.fun1) refers to functions.o(i.delay) for delay
+    functions.o(i.fun1) refers to functions.o(.data) for i1
+    functions.o(i.fun2) refers to functions.o(i.delay) for delay
+    functions.o(i.fun2) refers to functions.o(.data) for i2
+    functions.o(i.fun3) refers to functions.o(i.delay) for delay
+    functions.o(i.fun3) refers to functions.o(.data) for i3
+    functions.o(i.fun4) refers to functions.o(.data) for i4
+    functions.o(i.fun5) refers to functions.o(.data) for i5
+    functions.o(i.timer1) refers to functions.o(.data) for i6
+    functions.o(i.timer2) refers to functions.o(.data) for i7
+    functions.o(i.timer3) refers to functions.o(.data) for i8
+    startup_armcm3.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_armcm3.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_armcm3.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_armcm3.o(RESET) refers to startup_armcm3.o(STACK) for __initial_sp
+    startup_armcm3.o(RESET) refers to startup_armcm3.o(.text) for Reset_Handler
+    startup_armcm3.o(RESET) refers to switch.o(.emb_text) for PendSV_Handler
+    startup_armcm3.o(RESET) refers to bthread.o(i.SysTick_Handler) for SysTick_Handler
+    startup_armcm3.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_armcm3.o(.text) refers to system_armcm3.o(i.SystemInit) for SystemInit
+    startup_armcm3.o(.text) refers to __main.o(!!!main) for __main
+    startup_armcm3.o(.text) refers to startup_armcm3.o(HEAP) for Heap_Mem
+    startup_armcm3.o(.text) refers to startup_armcm3.o(STACK) for Stack_Mem
+    system_armcm3.o(i.SystemCoreClockUpdate) refers to system_armcm3.o(.data) for SystemCoreClock
+    system_armcm3.o(i.SystemInit) refers to system_armcm3.o(.data) for SystemCoreClock
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    atexit_aeabi.o(.text) refers to aeabi_atexit.o(.text) for __aeabi_atexit
+    atexit_aeabi.o(.ARM.exidx) refers to atexit_aeabi.o(.text) for .text
+    aeabi_atexit.o(.text) refers (Special) to cxa_finalize.o(.text) for __cxa_finalize
+    aeabi_atexit.o(.text) refers to h1_alloc.o(.text) for malloc
+    aeabi_atexit.o(.text) refers to rt_ddtor_pointer_addr_intlibspace.o(.text) for __rt_ddtor_pointer_addr
+    aeabi_atexit.o(.ARM.exidx) refers (Special) to cxa_finalize.o(.text) for __cxa_finalize
+    aeabi_atexit.o(.ARM.exidx) refers to aeabi_atexit.o(.text) for .text
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    init_aeabi.o(.emb_text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_cpp_2
+    init_aeabi.o(.init_array) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_cpp_2
+    init_aeabi.o(.init_array) refers to init_aeabi.o(.text) for __cpp_initialize__aeabi_
+    init_aeabi.o(.dummy_text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_cpp_2
+    init_aeabi.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_cpp_2
+    init_aeabi.o(.ARM.exidx) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_cpp_2
+    init_aeabi.o(.ARM.exidx) refers to init_aeabi.o(.text) for .text
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_ddtor_pointer_addr.o(.text) refers to rt_ddtor_pointer_addr.o(.bss) for __rt_ddtor_pointer_addr_data
+    rt_ddtor_pointer_addr_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    malloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    malloc.o(.text) refers (Special) to init_alloc.o(.text) for _init_alloc
+    malloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    malloc.o(.text) refers to heapstubs.o(.text) for __Heap_Alloc
+    h1_alloc.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_alloc.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_alloc_mt.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc_mt.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_alloc_mt.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._FDIterate) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i.___Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i.___Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.___Heap_Stats$realtime) refers to heap2.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2.o(i.___Heap_Valid$realtime) refers to heap2.o(i._FDIterate) for _FDIterate
+    heap2.o(i.___Heap_Valid$realtime) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i._free$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._free$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i._free$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._malloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i._malloc$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._posix_memalign$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i._posix_memalign$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._realloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._realloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._realloc$realtime) refers to h1_free.o(.text) for free
+    heap2.o(i._realloc$realtime) refers to h1_alloc.o(.text) for malloc
+    heap2.o(i._realloc$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i._realloc$realtime) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    heap2mt.o(i._FDIterate) refers to heap2mt.o(.conststring) for .conststring
+    heap2mt.o(i.___Heap_Initialize$realtime$concurrent) refers to mutex_dummy.o(.text) for _mutex_initialize
+    heap2mt.o(i.___Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i.___Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i.___Heap_Stats$realtime$concurrent) refers to heap2mt.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2mt.o(i.___Heap_Valid$realtime$concurrent) refers to heap2mt.o(i._FDIterate) for _FDIterate
+    heap2mt.o(i.___Heap_Valid$realtime$concurrent) refers to heap2mt.o(.conststring) for .conststring
+    heap2mt.o(i._free$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._free$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i._free$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._malloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2mt.o(i._malloc$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._realloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._realloc$realtime$concurrent) refers to h1_free.o(.text) for free
+    heap2mt.o(i._realloc$realtime$concurrent) refers to h1_alloc.o(.text) for malloc
+    heap2mt.o(i._realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i._realloc$realtime$concurrent) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    cxa_finalize.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000001) for __rt_lib_shutdown_cpp_2
+    cxa_finalize.o(.text) refers to rt_ddtor_pointer_addr_intlibspace.o(.text) for __rt_ddtor_pointer_addr
+    cxa_finalize.o(.text) refers to h1_free.o(.text) for free
+    cxa_finalize.o(.ARM.exidx) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000001) for __rt_lib_shutdown_cpp_2
+    cxa_finalize.o(.ARM.exidx) refers to cxa_finalize.o(.text) for .text
+    libinit2.o(.ARM.Collect$$libinit$$00000005) refers (Weak) to init_alloc.o(.text) for _init_alloc
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000031) refers (Weak) to init_aeabi.o(.text) for __cpp_initialize__aeabi_
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    rt_heap_descriptor.o(.text) refers to rt_heap_descriptor.o(.bss) for __rt_heap_descriptor_data
+    rt_heap_descriptor_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    init_alloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    init_alloc.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000005) for __rt_lib_init_heap_2
+    init_alloc.o(.text) refers (Special) to maybetermalloc1.o(.emb_text) for _maybe_terminate_alloc
+    init_alloc.o(.text) refers to h1_extend.o(.text) for __Heap_ProvideMemory
+    init_alloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    init_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    init_alloc.o(.text) refers to h1_init.o(.text) for __Heap_Initialize
+    free.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    free.o(.text) refers to heapstubs.o(.text) for __Heap_Free
+    h1_free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_init_mt.o(.text) refers to mutex_dummy.o(.text) for _mutex_initialize
+    h1_free_mt.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    _get_argv.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv.o(.text) refers to h1_alloc.o(.text) for malloc
+    _get_argv.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    libshutdown2.o(.ARM.Collect$$libshutdown$$00000001) refers (Weak) to cxa_finalize.o(.text) for __cxa_finalize
+    libshutdown2.o(.ARM.Collect$$libshutdown$$0000000D) refers (Weak) to term_alloc.o(.text) for _terminate_alloc
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_armcm3.o(.text) for __user_initial_stackheap
+    maybetermalloc2.o(.emb_text) refers (Special) to term_alloc.o(.text) for _terminate_alloc
+    h1_extend.o(.text) refers to h1_free.o(.text) for free
+    h1_extend_mt.o(.text) refers to h1_free_mt.o(.text) for _free_internal
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    heapauxa.o(.text) refers to heapauxa.o(.data) for .data
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    term_alloc.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_2
+    term_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    term_alloc.o(.text) refers to h1_final.o(.text) for __Heap_Finalize
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE) refers to bmemblock.o(i.bmemblock_get_mem) for bmemblock_get_mem
+    main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE) refers to bthreadpool.o(i.btask_init) for btask_init
+    main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE) refers to bmemblock.o(.bss) for memTasksUser
+    main.o(.ARM.exidx) refers to main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE) for i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE
+    main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) refers to bmemblock.o(i.bmemblock_get_mem) for bmemblock_get_mem
+    main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) refers to btimer.o(i.btimer_init) for btimer_init
+    main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) refers to bmemblock.o(.bss) for memTimerUser
+    main.o(.ARM.exidx) refers to main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) for i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType
+    main.o(i._ZN11smartthread11SmartThread13timers_threadEPv) refers to btimer.o(i.btimer_run_nrt_in_thread) for btimer_run_nrt_in_thread
+    main.o(.ARM.exidx) refers to main.o(i._ZN11smartthread11SmartThread13timers_threadEPv) for i._ZN11smartthread11SmartThread13timers_threadEPv
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to bmemblock.o(i.bmemblock_get_mem) for bmemblock_get_mem
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to bthreadpool.o(i.bthreadpool_init) for bthreadpool_init
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE) for smartthread::Task::Task(void*(*)(void*), void*, smartthread::ThreadPool*)
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType) for smartthread::Timer::Timer(unsigned, unsigned, void*(*)(void*), void*, bTimerType)
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to switch.o(i.bthread_set_systick_period) for bthread_set_systick_period
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to bmemblock.o(.bss) for memTPool
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.fun1) for fun1
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.fun2) for fun2
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.fun3) for fun3
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.fun4) for fun4
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.fun5) for fun5
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.timer1) for timer1
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.timer2) for timer2
+    main.o(i._ZN11smartthread11SmartThread6setEnvEPv) refers to functions.o(i.timer3) for timer3
+    main.o(.ARM.exidx) refers to main.o(i._ZN11smartthread11SmartThread6setEnvEPv) for i._ZN11smartthread11SmartThread6setEnvEPv
+    main.o(.ARM.exidx) refers to main.o(i._ZN11smartthread11SmartThreadD1Ev) for i._ZN11smartthread11SmartThreadD1Ev
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing switch.o(.rev16_text), (4 bytes).
+    Removing switch.o(.revsh_text), (4 bytes).
+    Removing switch.o(.rrx_text), (6 bytes).
+    Removing bthread.o(i.bbitmap_count), (4 bytes).
+    Removing bthread.o(i.bthread_delay), (40 bytes).
+    Removing bthread.o(i.bthread_set_flags), (4 bytes).
+    Removing bthread.o(i.bthread_stack_used), (44 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing blist.o(i.blist_add_first), (20 bytes).
+    Removing blist.o(i.blist_insert_after), (20 bytes).
+    Removing blist.o(i.blist_last), (12 bytes).
+    Removing blist.o(i.blist_next), (16 bytes).
+    Removing blist.o(i.blist_pre), (16 bytes).
+    Removing blist.o(i.blist_remove_all), (48 bytes).
+    Removing bevent.o(i.bevent_remove_all), (16 bytes).
+    Removing bmailbox.o(i.bmaibox_get_msg), (72 bytes).
+    Removing bmailbox.o(i.bmail_send_msg), (82 bytes).
+    Removing bmailbox.o(i.bmailbox_init), (42 bytes).
+    Removing bflaggroup.o(i.bflaggroup_check_consume), (128 bytes).
+    Removing bflaggroup.o(i.bflaggroup_init), (18 bytes).
+    Removing bflaggroup.o(i.bflaggroup_set_flags), (72 bytes).
+    Removing bflaggroup.o(i.bflaggroup_take_flags), (58 bytes).
+    Removing bflaggroup.o(.bss), (20 bytes).
+    Removing system_armcm3.o(.rev16_text), (4 bytes).
+    Removing system_armcm3.o(.revsh_text), (4 bytes).
+    Removing system_armcm3.o(.rrx_text), (6 bytes).
+    Removing system_armcm3.o(i.SystemCoreClockUpdate), (16 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+    Removing main.o(.ARM.exidx), (8 bytes).
+
+33 unused section(s) (total 832 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_armcm3.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor_intlibspace.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr_intlibspace.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  mutex_dummy.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
+    ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_init.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_final_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_free.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_final.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_free_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_extend_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_extend.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_init_mt.o ABSOLUTE
+    ../clib/heap2.c                          0x00000000   Number         0  heap2mt.o ABSOLUTE
+    ../clib/heap2.c                          0x00000000   Number         0  fdtree.o ABSOLUTE
+    ../clib/heap2.c                          0x00000000   Number         0  heap2.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  heapstubs.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hguard.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  term_alloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  init_alloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  free.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxa.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  aeabi_atexit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  atexit_aeabi.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  cxa_finalize.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    RTE\Device\ARMCM3\startup_ARMCM3.s       0x00000000   Number         0  startup_armcm3.o ABSOLUTE
+    RTE\Device\ARMCM3\system_ARMCM3.c        0x00000000   Number         0  system_armcm3.o ABSOLUTE
+    RTE\\Device\\ARMCM3\\system_ARMCM3.c     0x00000000   Number         0  system_armcm3.o ABSOLUTE
+    Source\Main.cpp                          0x00000000   Number         0  main.o ABSOLUTE
+    Source\\switch.c                         0x00000000   Number         0  switch.o ABSOLUTE
+    Source\bCondition.c                      0x00000000   Number         0  bcondition.o ABSOLUTE
+    Source\bConfig.c                         0x00000000   Number         0  bconfig.o ABSOLUTE
+    Source\bEvent.c                          0x00000000   Number         0  bevent.o ABSOLUTE
+    Source\bFlagGroup.c                      0x00000000   Number         0  bflaggroup.o ABSOLUTE
+    Source\bList.c                           0x00000000   Number         0  blist.o ABSOLUTE
+    Source\bMailBox.c                        0x00000000   Number         0  bmailbox.o ABSOLUTE
+    Source\bMemBlock.c                       0x00000000   Number         0  bmemblock.o ABSOLUTE
+    Source\bMutex.c                          0x00000000   Number         0  bmutex.o ABSOLUTE
+    Source\bSem.c                            0x00000000   Number         0  bsem.o ABSOLUTE
+    Source\bThread.c                         0x00000000   Number         0  bthread.o ABSOLUTE
+    Source\bThreadPool.c                     0x00000000   Number         0  bthreadpool.o ABSOLUTE
+    Source\bTimer.c                          0x00000000   Number         0  btimer.o ABSOLUTE
+    Source\functions.c                       0x00000000   Number         0  functions.o ABSOLUTE
+    Source\switch.c                          0x00000000   Number         0  switch.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    !!!main                                  0x000000c0   Section        8  __main.o(!!!main)
+    !!!scatter                               0x000000c8   Section       52  __scatter.o(!!!scatter)
+    !!handler_copy                           0x000000fc   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x00000118   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x00000134   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x00000136   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x00000136   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$00000005          0x00000136   Section        8  libinit2.o(.ARM.Collect$$libinit$$00000005)
+    .ARM.Collect$$libinit$$0000000A          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000031          0x0000013e   Section        4  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    .ARM.Collect$$libinit$$00000032          0x00000142   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x00000142   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x00000144   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000001      0x00000146   Section        6  libshutdown2.o(.ARM.Collect$$libshutdown$$00000001)
+    .ARM.Collect$$libshutdown$$00000002      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x0000014c   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x0000014c   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x0000014e   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x0000014e   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x0000014e   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x00000154   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x00000154   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x00000158   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x00000158   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x00000160   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x00000162   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x00000162   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x00000166   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .emb_text                                0x0000016c   Section       48  switch.o(.emb_text)
+    .emb_text                                0x0000019c   Section        0  maybetermalloc1.o(.emb_text)
+    .text                                    0x0000019c   Section       64  startup_armcm3.o(.text)
+    .text                                    0x000001dc   Section        0  exit.o(.text)
+    .text                                    0x000001ee   Section        0  aeabi_atexit.o(.text)
+    .text                                    0x0000021c   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x0000026a   Section        0  heapauxi.o(.text)
+    .text                                    0x00000270   Section        0  init_aeabi.o(.text)
+    .text                                    0x00000294   Section        8  rt_ddtor_pointer_addr_intlibspace.o(.text)
+    .text                                    0x0000029c   Section        0  h1_alloc.o(.text)
+    .text                                    0x000002fa   Section        0  cxa_finalize.o(.text)
+    .text                                    0x0000033c   Section        8  libspace.o(.text)
+    .text                                    0x00000344   Section        8  rt_heap_descriptor_intlibspace.o(.text)
+    .text                                    0x0000034c   Section        0  hguard.o(.text)
+    .text                                    0x00000350   Section        0  init_alloc.o(.text)
+    .text                                    0x000003da   Section        0  h1_init.o(.text)
+    .text                                    0x000003e8   Section        0  h1_free.o(.text)
+    .text                                    0x00000438   Section        0  sys_exit.o(.text)
+    .text                                    0x00000444   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x0000048e   Section        0  h1_extend.o(.text)
+    .text                                    0x000004c2   Section        0  defsig_rtmem_outer.o(.text)
+    .text                                    0x000004d0   Section        2  use_no_semi.o(.text)
+    .text                                    0x000004d2   Section        0  defsig_exit.o(.text)
+    .text                                    0x000004d2   Section        0  indicate_semi.o(.text)
+    .text                                    0x000004dc   Section        0  defsig_rtmem_inner.o(.text)
+    .text                                    0x0000052c   Section        0  defsig_general.o(.text)
+    .text                                    0x0000055e   Section        0  sys_wrch.o(.text)
+    i.SysTick_Handler                        0x0000056c   Section        0  bthread.o(i.SysTick_Handler)
+    i.SystemInit                             0x00000580   Section        0  system_armcm3.o(i.SystemInit)
+    i._ZN11smartthread11SmartThread13timers_threadEPv 0x00000590   Section        0  main.o(i._ZN11smartthread11SmartThread13timers_threadEPv)
+    i._ZN11smartthread11SmartThread6setEnvEPv 0x00000598   Section        0  main.o(i._ZN11smartthread11SmartThread6setEnvEPv)
+    i._ZN11smartthread11SmartThreadD1Ev      0x00000660   Section        0  main.o(i._ZN11smartthread11SmartThreadD1Ev)
+    i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE 0x00000664   Section        0  main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE)
+    i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType 0x000006a8   Section        0  main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType)
+    i.__sti___8_Main_cpp_b48cbc19            0x000006e8   Section        0  main.o(i.__sti___8_Main_cpp_b48cbc19)
+    __sti___8_Main_cpp_b48cbc19              0x000006e9   Thumb Code    86  main.o(i.__sti___8_Main_cpp_b48cbc19)
+    i.bbitmap_clear                          0x00000758   Section        0  bthread.o(i.bbitmap_clear)
+    i.bbitmap_get_firstset                   0x00000764   Section        0  bthread.o(i.bbitmap_get_firstset)
+    i.bbitmap_init                           0x000007bc   Section        0  bthread.o(i.bbitmap_init)
+    i.bbitmap_set                            0x000007c2   Section        0  bthread.o(i.bbitmap_set)
+    i.bcondition_init                        0x000007ce   Section        0  bcondition.o(i.bcondition_init)
+    i.bcondition_notify                      0x000007d4   Section        0  bcondition.o(i.bcondition_notify)
+    i.bcondition_wait                        0x00000828   Section        0  bcondition.o(i.bcondition_wait)
+    i.bevent_init                            0x00000874   Section        0  bevent.o(i.bevent_init)
+    i.bevent_remove                          0x00000884   Section        0  bevent.o(i.bevent_remove)
+    i.bevent_wait                            0x000008b8   Section        0  bevent.o(i.bevent_wait)
+    i.bevent_wait_count                      0x00000904   Section        0  bevent.o(i.bevent_wait_count)
+    i.bevent_wakeup                          0x00000920   Section        0  bevent.o(i.bevent_wakeup)
+    i.blist_add_last                         0x00000974   Section        0  blist.o(i.blist_add_last)
+    i.blist_count                            0x00000988   Section        0  blist.o(i.blist_count)
+    i.blist_first                            0x0000098e   Section        0  blist.o(i.blist_first)
+    i.blist_init                             0x0000099a   Section        0  blist.o(i.blist_init)
+    i.blist_remove                           0x000009a4   Section        0  blist.o(i.blist_remove)
+    i.blist_remove_first                     0x000009c2   Section        0  blist.o(i.blist_remove_first)
+    i.bmemblock_all_init                     0x000009e8   Section        0  bmemblock.o(i.bmemblock_all_init)
+    i.bmemblock_get_mem                      0x00000a7c   Section        0  bmemblock.o(i.bmemblock_get_mem)
+    i.bmemblock_init                         0x00000ab6   Section        0  bmemblock.o(i.bmemblock_init)
+    i.bmemblock_release_mem                  0x00000b16   Section        0  bmemblock.o(i.bmemblock_release_mem)
+    i.bmutexlock_init                        0x00000b4c   Section        0  bmutex.o(i.bmutexlock_init)
+    i.bmutexlock_lock                        0x00000b60   Section        0  bmutex.o(i.bmutexlock_lock)
+    i.bmutexlock_lock_this                   0x00000bf8   Section        0  bmutex.o(i.bmutexlock_lock_this)
+    i.bmutexlock_release                     0x00000c16   Section        0  bmutex.o(i.bmutexlock_release)
+    i.bmutexlock_unlock                      0x00000c30   Section        0  bmutex.o(i.bmutexlock_unlock)
+    i.bmutexlock_wait                        0x00000cc4   Section        0  bmutex.o(i.bmutexlock_wait)
+    i.bmutexlock_wait_count                  0x00000cde   Section        0  bmutex.o(i.bmutexlock_wait_count)
+    i.bmutexlock_wakeup                      0x00000cfa   Section        0  bmutex.o(i.bmutexlock_wakeup)
+    i.bnode_init                             0x00000d22   Section        0  blist.o(i.bnode_init)
+    i.bsem_all_init                          0x00000d28   Section        0  bsem.o(i.bsem_all_init)
+    i.bsem_init                              0x00000d38   Section        0  bsem.o(i.bsem_init)
+    i.bsem_notify                            0x00000d4c   Section        0  bsem.o(i.bsem_notify)
+    i.bsem_wait                              0x00000d90   Section        0  bsem.o(i.bsem_wait)
+    i.btask_init                             0x00000dd0   Section        0  bthreadpool.o(i.btask_init)
+    i.bthread_create                         0x00000df2   Section        0  bthread.o(i.bthread_create)
+    i.bthread_enter_critical                 0x00000e58   Section        0  switch.o(i.bthread_enter_critical)
+    i.bthread_exit_critical                  0x00000e64   Section        0  switch.o(i.bthread_exit_critical)
+    i.bthread_get_readyed                    0x00000e70   Section        0  bthread.o(i.bthread_get_readyed)
+    i.bthread_get_ticks                      0x00000e94   Section        0  bthread.o(i.bthread_get_ticks)
+    i.bthread_ready                          0x00000ea8   Section        0  bthread.o(i.bthread_ready)
+    i.bthread_run_first                      0x00000edc   Section        0  switch.o(i.bthread_run_first)
+    i.bthread_schedule                       0x00000ef8   Section        0  bthread.o(i.bthread_schedule)
+    i.bthread_set_systick_period             0x00000f34   Section        0  switch.o(i.bthread_set_systick_period)
+    i.bthread_stack_init                     0x00000f8c   Section        0  bthread.o(i.bthread_stack_init)
+    bthread_stack_init                       0x00000f8d   Thumb Code   164  bthread.o(i.bthread_stack_init)
+    i.bthread_switch                         0x00001030   Section        0  switch.o(i.bthread_switch)
+    i.bthread_systick_handler                0x00001040   Section        0  bthread.o(i.bthread_systick_handler)
+    i.bthread_time_wait                      0x00001084   Section        0  bthread.o(i.bthread_time_wait)
+    i.bthread_time_wakeup                    0x000010bc   Section        0  bthread.o(i.bthread_time_wakeup)
+    i.bthread_unready                        0x000010dc   Section        0  bthread.o(i.bthread_unready)
+    i.bthreadpool_init                       0x00001120   Section        0  bthreadpool.o(i.bthreadpool_init)
+    i.bthreadpool_put_task                   0x00001188   Section        0  bthreadpool.o(i.bthreadpool_put_task)
+    i.bthreadpool_run                        0x000011b0   Section        0  bthreadpool.o(i.bthreadpool_run)
+    i.bthreadpool_take_task                  0x000011c4   Section        0  bthreadpool.o(i.bthreadpool_take_task)
+    i.bthreads_delayed_wakeup                0x00001200   Section        0  bthread.o(i.bthreads_delayed_wakeup)
+    bthreads_delayed_wakeup                  0x00001201   Thumb Code    94  bthread.o(i.bthreads_delayed_wakeup)
+    i.bthreads_start                         0x00001268   Section        0  bthread.o(i.bthreads_start)
+    i.btimer_in_systick                      0x00001270   Section        0  btimer.o(i.btimer_in_systick)
+    i.btimer_init                            0x0000127c   Section        0  btimer.o(i.btimer_init)
+    i.btimer_run_nrt_in_systick              0x000012d8   Section        0  btimer.o(i.btimer_run_nrt_in_systick)
+    i.btimer_run_nrt_in_thread               0x00001310   Section        0  btimer.o(i.btimer_run_nrt_in_thread)
+    i.btimer_run_rt                          0x00001370   Section        0  btimer.o(i.btimer_run_rt)
+    i.delay                                  0x000013b8   Section        0  functions.o(i.delay)
+    i.fun1                                   0x000013c8   Section        0  functions.o(i.fun1)
+    i.fun2                                   0x000013e0   Section        0  functions.o(i.fun2)
+    i.fun3                                   0x000013f8   Section        0  functions.o(i.fun3)
+    i.fun4                                   0x00001410   Section        0  functions.o(i.fun4)
+    i.fun5                                   0x00001424   Section        0  functions.o(i.fun5)
+    i.main                                   0x00001438   Section        0  main.o(i.main)
+    i.threads_all_list_init                  0x00001454   Section        0  blist.o(i.threads_all_list_init)
+    i.threads_delayed_init                   0x00001464   Section        0  blist.o(i.threads_delayed_init)
+    i.threads_readyed_init                   0x00001474   Section        0  blist.o(i.threads_readyed_init)
+    i.timer1                                 0x00001494   Section        0  functions.o(i.timer1)
+    i.timer2                                 0x000014a8   Section        0  functions.o(i.timer2)
+    i.timer3                                 0x000014bc   Section        0  functions.o(i.timer3)
+    i.timers_init                            0x000014d0   Section        0  blist.o(i.timers_init)
+    .constdata                               0x000014e8   Section      256  bthread.o(.constdata)
+    quickFindTable                           0x000014e8   Data         256  bthread.o(.constdata)
+    .init_array                              0x00001608   Section        4  main.o(.init_array)
+    .init_array                              0x0000160c   Section        0  init_aeabi.o(.init_array)
+    .data                                    0x20000000   Section       12  bthread.o(.data)
+    .data                                    0x2000000c   Section       32  functions.o(.data)
+    .data                                    0x2000002c   Section        4  system_armcm3.o(.data)
+    .bss                                     0x20000030   Section     8328  main.o(.bss)
+    .bss                                     0x200020b8   Section      420  blist.o(.bss)
+    .bss                                     0x2000225c   Section       20  bsem.o(.bss)
+    .bss                                     0x20002270   Section    29728  bmemblock.o(.bss)
+    .bss                                     0x20009690   Section       96  libspace.o(.bss)
+    HEAP                                     0x200096f0   Section     3072  startup_armcm3.o(HEAP)
+    Heap_Mem                                 0x200096f0   Data        3072  startup_armcm3.o(HEAP)
+    STACK                                    0x2000a2f0   Section     1024  startup_armcm3.o(STACK)
+    Stack_Mem                                0x2000a2f0   Data        1024  startup_armcm3.o(STACK)
+    __initial_sp                             0x2000a6f0   Data           0  startup_armcm3.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_armcm3.o(RESET)
+    __dso_handle                             0x00000000   Number         0  startup_armcm3.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    __user_heap_extent                        - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _mutex_acquire                            - Undefined Weak Reference
+    _mutex_free                               - Undefined Weak Reference
+    _mutex_release                            - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_armcm3.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_armcm3.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x000000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x000000c9   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x000000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x000000d7   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x000000fd   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x00000119   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x00000135   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_fp_1                       0x00000137   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_heap_2                     0x00000137   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000005)
+    __rt_lib_init_preinit_1                  0x00000137   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_alloca_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_2                      0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    __rt_lib_init_exceptions_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_trap_1                  0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_rand_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_signal_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_init_cpp_1                      0x00000143   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_return                     0x00000143   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_shutdown                        0x00000145   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_2                  0x00000147   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000001)
+    __rt_lib_shutdown_cpp_1                  0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x0000014d   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x0000014f   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x0000014f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x0000014f   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x00000155   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x00000155   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x00000159   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x00000159   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x00000161   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x00000163   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x00000163   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x00000167   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    PendSV_Handler                           0x0000016d   Thumb Code    40  switch.o(.emb_text)
+    Reset_Handler                            0x0000019d   Thumb Code     8  startup_armcm3.o(.text)
+    _maybe_terminate_alloc                   0x0000019d   Thumb Code     0  maybetermalloc1.o(.emb_text)
+    NMI_Handler                              0x000001a5   Thumb Code     2  startup_armcm3.o(.text)
+    HardFault_Handler                        0x000001a7   Thumb Code     2  startup_armcm3.o(.text)
+    MemManage_Handler                        0x000001a9   Thumb Code     2  startup_armcm3.o(.text)
+    BusFault_Handler                         0x000001ab   Thumb Code     2  startup_armcm3.o(.text)
+    UsageFault_Handler                       0x000001ad   Thumb Code     2  startup_armcm3.o(.text)
+    SVC_Handler                              0x000001af   Thumb Code     2  startup_armcm3.o(.text)
+    DebugMon_Handler                         0x000001b1   Thumb Code     2  startup_armcm3.o(.text)
+    AACI_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    CAN_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    CHLCD_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    CLCD_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    CPU_CLCD_IRQHandler                      0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    ENET_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    FLEXRAY_IRQHandler                       0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    I2C_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    LIN_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    MCIA_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    MCIB_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    RTC_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    SPI_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    TIM0_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    TIM2_IRQHandler                          0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    UART0_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    UART1_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    UART2_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    UART3_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    UART4_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    USBDC_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    USBHC_IRQHandler                         0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    WDT_IRQHandler                           0x000001b7   Thumb Code     0  startup_armcm3.o(.text)
+    __user_initial_stackheap                 0x000001b9   Thumb Code    10  startup_armcm3.o(.text)
+    exit                                     0x000001dd   Thumb Code    18  exit.o(.text)
+    __aeabi_atexit                           0x000001ef   Thumb Code    46  aeabi_atexit.o(.text)
+    __aeabi_memclr4                          0x0000021d   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x0000021d   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x0000021d   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x00000221   Thumb Code     0  rt_memclr_w.o(.text)
+    __use_two_region_memory                  0x0000026b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow                         0x0000026d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand                         0x0000026f   Thumb Code     2  heapauxi.o(.text)
+    __cpp_initialize__aeabi_                 0x00000271   Thumb Code    26  init_aeabi.o(.text)
+    __rt_ddtor_pointer_addr                  0x00000295   Thumb Code     8  rt_ddtor_pointer_addr_intlibspace.o(.text)
+    malloc                                   0x0000029d   Thumb Code    94  h1_alloc.o(.text)
+    __cxa_finalize                           0x000002fb   Thumb Code    66  cxa_finalize.o(.text)
+    __user_libspace                          0x0000033d   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x0000033d   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x0000033d   Thumb Code     0  libspace.o(.text)
+    __rt_heap_descriptor                     0x00000345   Thumb Code     8  rt_heap_descriptor_intlibspace.o(.text)
+    __use_no_heap                            0x0000034d   Thumb Code     2  hguard.o(.text)
+    __heap$guard                             0x0000034f   Thumb Code     2  hguard.o(.text)
+    _terminate_user_alloc                    0x00000351   Thumb Code     2  init_alloc.o(.text)
+    _init_user_alloc                         0x00000353   Thumb Code     2  init_alloc.o(.text)
+    __Heap_Full                              0x00000355   Thumb Code    34  init_alloc.o(.text)
+    __Heap_Broken                            0x00000377   Thumb Code     6  init_alloc.o(.text)
+    _init_alloc                              0x0000037d   Thumb Code    94  init_alloc.o(.text)
+    __Heap_Initialize                        0x000003db   Thumb Code    10  h1_init.o(.text)
+    __Heap_DescSize                          0x000003e5   Thumb Code     4  h1_init.o(.text)
+    free                                     0x000003e9   Thumb Code    78  h1_free.o(.text)
+    _sys_exit                                0x00000439   Thumb Code     8  sys_exit.o(.text)
+    __user_setup_stackheap                   0x00000445   Thumb Code    74  sys_stackheap_outer.o(.text)
+    __Heap_ProvideMemory                     0x0000048f   Thumb Code    52  h1_extend.o(.text)
+    __rt_SIGRTMEM                            0x000004c3   Thumb Code    14  defsig_rtmem_outer.o(.text)
+    __I$use$semihosting                      0x000004d1   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x000004d1   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x000004d3   Thumb Code     0  indicate_semi.o(.text)
+    __sig_exit                               0x000004d3   Thumb Code    10  defsig_exit.o(.text)
+    __rt_SIGRTMEM_inner                      0x000004dd   Thumb Code    22  defsig_rtmem_inner.o(.text)
+    __default_signal_display                 0x0000052d   Thumb Code    50  defsig_general.o(.text)
+    _ttywrch                                 0x0000055f   Thumb Code    14  sys_wrch.o(.text)
+    SysTick_Handler                          0x0000056d   Thumb Code    20  bthread.o(i.SysTick_Handler)
+    SystemInit                               0x00000581   Thumb Code     8  system_armcm3.o(i.SystemInit)
+    smartthread::SmartThread::timers_thread(void*) 0x00000591   Thumb Code     8  main.o(i._ZN11smartthread11SmartThread13timers_threadEPv)
+    smartthread::SmartThread::setEnv(void*)  0x00000599   Thumb Code   162  main.o(i._ZN11smartthread11SmartThread6setEnvEPv)
+    smartthread::SmartThread::~SmartThread() 0x00000661   Thumb Code     4  main.o(i._ZN11smartthread11SmartThreadD1Ev)
+    smartthread::SmartThread::~SmartThread__sub_object() 0x00000661   Thumb Code     0  main.o(i._ZN11smartthread11SmartThreadD1Ev)
+    smartthread::Task::Task(void*(*)(void*), void*, smartthread::ThreadPool*) 0x00000665   Thumb Code    62  main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE)
+    smartthread::Task::Task__sub_object(void*(*)(void*), void*, smartthread::ThreadPool*) 0x00000665   Thumb Code     0  main.o(i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE)
+    smartthread::Timer::Timer(unsigned, unsigned, void*(*)(void*), void*, bTimerType) 0x000006a9   Thumb Code    60  main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType)
+    smartthread::Timer::Timer__sub_object(unsigned, unsigned, void*(*)(void*), void*, bTimerType) 0x000006a9   Thumb Code     0  main.o(i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType)
+    bbitmap_clear                            0x00000759   Thumb Code    12  bthread.o(i.bbitmap_clear)
+    bbitmap_get_firstset                     0x00000765   Thumb Code    84  bthread.o(i.bbitmap_get_firstset)
+    bbitmap_init                             0x000007bd   Thumb Code     6  bthread.o(i.bbitmap_init)
+    bbitmap_set                              0x000007c3   Thumb Code    12  bthread.o(i.bbitmap_set)
+    bcondition_init                          0x000007cf   Thumb Code     4  bcondition.o(i.bcondition_init)
+    bcondition_notify                        0x000007d5   Thumb Code    78  bcondition.o(i.bcondition_notify)
+    bcondition_wait                          0x00000829   Thumb Code    70  bcondition.o(i.bcondition_wait)
+    bevent_init                              0x00000875   Thumb Code    16  bevent.o(i.bevent_init)
+    bevent_remove                            0x00000885   Thumb Code    52  bevent.o(i.bevent_remove)
+    bevent_wait                              0x000008b9   Thumb Code    70  bevent.o(i.bevent_wait)
+    bevent_wait_count                        0x00000905   Thumb Code    28  bevent.o(i.bevent_wait_count)
+    bevent_wakeup                            0x00000921   Thumb Code    84  bevent.o(i.bevent_wakeup)
+    blist_add_last                           0x00000975   Thumb Code    20  blist.o(i.blist_add_last)
+    blist_count                              0x00000989   Thumb Code     6  blist.o(i.blist_count)
+    blist_first                              0x0000098f   Thumb Code    12  blist.o(i.blist_first)
+    blist_init                               0x0000099b   Thumb Code    10  blist.o(i.blist_init)
+    blist_remove                             0x000009a5   Thumb Code    30  blist.o(i.blist_remove)
+    blist_remove_first                       0x000009c3   Thumb Code    36  blist.o(i.blist_remove_first)
+    bmemblock_all_init                       0x000009e9   Thumb Code    90  bmemblock.o(i.bmemblock_all_init)
+    bmemblock_get_mem                        0x00000a7d   Thumb Code    58  bmemblock.o(i.bmemblock_get_mem)
+    bmemblock_init                           0x00000ab7   Thumb Code    96  bmemblock.o(i.bmemblock_init)
+    bmemblock_release_mem                    0x00000b17   Thumb Code    54  bmemblock.o(i.bmemblock_release_mem)
+    bmutexlock_init                          0x00000b4d   Thumb Code    20  bmutex.o(i.bmutexlock_init)
+    bmutexlock_lock                          0x00000b61   Thumb Code   148  bmutex.o(i.bmutexlock_lock)
+    bmutexlock_lock_this                     0x00000bf9   Thumb Code    30  bmutex.o(i.bmutexlock_lock_this)
+    bmutexlock_release                       0x00000c17   Thumb Code    24  bmutex.o(i.bmutexlock_release)
+    bmutexlock_unlock                        0x00000c31   Thumb Code   142  bmutex.o(i.bmutexlock_unlock)
+    bmutexlock_wait                          0x00000cc5   Thumb Code    26  bmutex.o(i.bmutexlock_wait)
+    bmutexlock_wait_count                    0x00000cdf   Thumb Code    28  bmutex.o(i.bmutexlock_wait_count)
+    bmutexlock_wakeup                        0x00000cfb   Thumb Code    40  bmutex.o(i.bmutexlock_wakeup)
+    bnode_init                               0x00000d23   Thumb Code     6  blist.o(i.bnode_init)
+    bsem_all_init                            0x00000d29   Thumb Code    10  bsem.o(i.bsem_all_init)
+    bsem_init                                0x00000d39   Thumb Code    18  bsem.o(i.bsem_init)
+    bsem_notify                              0x00000d4d   Thumb Code    62  bsem.o(i.bsem_notify)
+    bsem_wait                                0x00000d91   Thumb Code    58  bsem.o(i.bsem_wait)
+    btask_init                               0x00000dd1   Thumb Code    34  bthreadpool.o(i.btask_init)
+    bthread_create                           0x00000df3   Thumb Code   102  bthread.o(i.bthread_create)
+    bthread_enter_critical                   0x00000e59   Thumb Code    12  switch.o(i.bthread_enter_critical)
+    bthread_exit_critical                    0x00000e65   Thumb Code    10  switch.o(i.bthread_exit_critical)
+    bthread_get_readyed                      0x00000e71   Thumb Code    28  bthread.o(i.bthread_get_readyed)
+    bthread_get_ticks                        0x00000e95   Thumb Code    18  bthread.o(i.bthread_get_ticks)
+    bthread_ready                            0x00000ea9   Thumb Code    44  bthread.o(i.bthread_ready)
+    bthread_run_first                        0x00000edd   Thumb Code    24  switch.o(i.bthread_run_first)
+    bthread_schedule                         0x00000ef9   Thumb Code    52  bthread.o(i.bthread_schedule)
+    bthread_set_systick_period               0x00000f35   Thumb Code    74  switch.o(i.bthread_set_systick_period)
+    bthread_switch                           0x00001031   Thumb Code    10  switch.o(i.bthread_switch)
+    bthread_systick_handler                  0x00001041   Thumb Code    62  bthread.o(i.bthread_systick_handler)
+    bthread_time_wait                        0x00001085   Thumb Code    46  bthread.o(i.bthread_time_wait)
+    bthread_time_wakeup                      0x000010bd   Thumb Code    28  bthread.o(i.bthread_time_wakeup)
+    bthread_unready                          0x000010dd   Thumb Code    58  bthread.o(i.bthread_unready)
+    bthreadpool_init                         0x00001121   Thumb Code    90  bthreadpool.o(i.bthreadpool_init)
+    bthreadpool_put_task                     0x00001189   Thumb Code    40  bthreadpool.o(i.bthreadpool_put_task)
+    bthreadpool_run                          0x000011b1   Thumb Code    20  bthreadpool.o(i.bthreadpool_run)
+    bthreadpool_take_task                    0x000011c5   Thumb Code    58  bthreadpool.o(i.bthreadpool_take_task)
+    bthreads_start                           0x00001269   Thumb Code     8  bthread.o(i.bthreads_start)
+    btimer_in_systick                        0x00001271   Thumb Code    12  btimer.o(i.btimer_in_systick)
+    btimer_init                              0x0000127d   Thumb Code    84  btimer.o(i.btimer_init)
+    btimer_run_nrt_in_systick                0x000012d9   Thumb Code    48  btimer.o(i.btimer_run_nrt_in_systick)
+    btimer_run_nrt_in_thread                 0x00001311   Thumb Code    84  btimer.o(i.btimer_run_nrt_in_thread)
+    btimer_run_rt                            0x00001371   Thumb Code    64  btimer.o(i.btimer_run_rt)
+    delay                                    0x000013b9   Thumb Code    16  functions.o(i.delay)
+    fun1                                     0x000013c9   Thumb Code    18  functions.o(i.fun1)
+    fun2                                     0x000013e1   Thumb Code    18  functions.o(i.fun2)
+    fun3                                     0x000013f9   Thumb Code    18  functions.o(i.fun3)
+    fun4                                     0x00001411   Thumb Code    16  functions.o(i.fun4)
+    fun5                                     0x00001425   Thumb Code    16  functions.o(i.fun5)
+    main                                     0x00001439   Thumb Code    22  main.o(i.main)
+    threads_all_list_init                    0x00001455   Thumb Code    16  blist.o(i.threads_all_list_init)
+    threads_delayed_init                     0x00001465   Thumb Code    10  blist.o(i.threads_delayed_init)
+    threads_readyed_init                     0x00001475   Thumb Code    28  blist.o(i.threads_readyed_init)
+    timer1                                   0x00001495   Thumb Code    16  functions.o(i.timer1)
+    timer2                                   0x000014a9   Thumb Code    16  functions.o(i.timer2)
+    timer3                                   0x000014bd   Thumb Code    16  functions.o(i.timer3)
+    timers_init                              0x000014d1   Thumb Code    16  blist.o(i.timers_init)
+    Region$$Table$$Base                      0x000015e8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001608   Number         0  anon$$obj.o(Region$$Table)
+    SHT$$INIT_ARRAY$$Base                    0x00001608   Number         0  main.o(.init_array)
+    SHT$$INIT_ARRAY$$Limit                   0x0000160c   Number         0  init_aeabi.o(.init_array)
+    threadsBMapRdyed                         0x20000000   Data           4  bthread.o(.data)
+    currentThread                            0x20000004   Data           4  bthread.o(.data)
+    nextThread                               0x20000008   Data           4  bthread.o(.data)
+    i1                                       0x2000000c   Data           4  functions.o(.data)
+    i2                                       0x20000010   Data           4  functions.o(.data)
+    i3                                       0x20000014   Data           4  functions.o(.data)
+    i4                                       0x20000018   Data           4  functions.o(.data)
+    i5                                       0x2000001c   Data           4  functions.o(.data)
+    i6                                       0x20000020   Data           4  functions.o(.data)
+    i7                                       0x20000024   Data           4  functions.o(.data)
+    i8                                       0x20000028   Data           4  functions.o(.data)
+    SystemCoreClock                          0x2000002c   Data           4  system_armcm3.o(.data)
+    smarthread                               0x20000030   Data        8328  main.o(.bss)
+    threadsRdy                               0x200020b8   Data         384  blist.o(.bss)
+    threadsDelayed                           0x20002238   Data          12  blist.o(.bss)
+    timers_rt                                0x20002244   Data          12  blist.o(.bss)
+    timers_nrt                               0x20002250   Data          12  blist.o(.bss)
+    semTick                                  0x2000225c   Data          20  bsem.o(.bss)
+    memThreadsThreadPool                     0x20002270   Data         340  bmemblock.o(.bss)
+    memThreadsPool                           0x200023c4   Data          52  bmemblock.o(.bss)
+    memStacksThreadPool                      0x200023f8   Data       20480  bmemblock.o(.bss)
+    memStacksPool                            0x200073f8   Data          52  bmemblock.o(.bss)
+    memThreadsDefinedByUser                  0x2000742c   Data         136  bmemblock.o(.bss)
+    memThreadsUser                           0x200074b4   Data          52  bmemblock.o(.bss)
+    memStacksDefinedByUser                   0x200074e8   Data        8192  bmemblock.o(.bss)
+    memStacksUser                            0x200094e8   Data          52  bmemblock.o(.bss)
+    memThreadPool                            0x2000951c   Data          40  bmemblock.o(.bss)
+    memTPool                                 0x20009544   Data          52  bmemblock.o(.bss)
+    memTasksDefinedByUser                    0x20009578   Data          80  bmemblock.o(.bss)
+    memTasksUser                             0x200095c8   Data          52  bmemblock.o(.bss)
+    memTimerDefineByUser                     0x200095fc   Data          96  bmemblock.o(.bss)
+    memTimerUser                             0x2000965c   Data          52  bmemblock.o(.bss)
+    __libspace_start                         0x20009690   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200096f0   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000019d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x0000163c, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000160c, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000c0   Data   RO          941    RESET               startup_armcm3.o
+    0x000000c0   0x00000008   Code   RO         1003  * !!!main             c_w.l(__main.o)
+    0x000000c8   0x00000034   Code   RO         1280    !!!scatter          c_w.l(__scatter.o)
+    0x000000fc   0x0000001a   Code   RO         1282    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00000116   0x00000002   PAD
+    0x00000118   0x0000001c   Code   RO         1284    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x00000134   0x00000002   Code   RO         1237    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x00000136   0x00000000   Code   RO         1079    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x00000136   0x00000000   Code   RO         1081    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x00000136   0x00000008   Code   RO         1082    .ARM.Collect$$libinit$$00000005  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1084    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1086    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1088    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1091    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1093    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1095    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1097    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1099    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1101    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1103    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1105    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1107    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1109    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1111    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1115    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1117    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0000013e   0x00000000   Code   RO         1119    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0000013e   0x00000004   Code   RO         1120    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x00000142   0x00000000   Code   RO         1121    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x00000142   0x00000002   Code   RO         1122    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x00000144   0x00000002   Code   RO         1238    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x00000146   0x00000006   Code   RO         1187    .ARM.Collect$$libshutdown$$00000001  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1188    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1190    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1193    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1196    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1198    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000000   Code   RO         1201    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0000014c   0x00000002   Code   RO         1202    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x0000014e   0x00000000   Code   RO         1011    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x0000014e   0x00000000   Code   RO         1129    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x0000014e   0x00000006   Code   RO         1141    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x00000154   0x00000000   Code   RO         1131    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x00000154   0x00000004   Code   RO         1132    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x00000158   0x00000000   Code   RO         1134    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x00000158   0x00000008   Code   RO         1135    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x00000160   0x00000002   Code   RO         1012    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000162   0x00000000   Code   RO         1144    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000162   0x00000004   Code   RO         1145    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000166   0x00000006   Code   RO         1146    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x0000016c   0x00000030   Code   RO            4    .emb_text           switch.o
+    0x0000019c   0x00000000   Code   RO         1213    .emb_text           c_w.l(maybetermalloc1.o)
+    0x0000019c   0x00000040   Code   RO          942  * .text               startup_armcm3.o
+    0x000001dc   0x00000012   Code   RO          991    .text               c_w.l(exit.o)
+    0x000001ee   0x0000002e   Code   RO          996    .text               c_w.l(aeabi_atexit.o)
+    0x0000021c   0x0000004e   Code   RO          999    .text               c_w.l(rt_memclr_w.o)
+    0x0000026a   0x00000006   Code   RO         1001    .text               c_w.l(heapauxi.o)
+    0x00000270   0x00000024   Code   RO         1008    .text               c_w.l(init_aeabi.o)
+    0x00000294   0x00000008   Code   RO         1017    .text               c_w.l(rt_ddtor_pointer_addr_intlibspace.o)
+    0x0000029c   0x0000005e   Code   RO         1021    .text               c_w.l(h1_alloc.o)
+    0x000002fa   0x00000042   Code   RO         1075    .text               c_w.l(cxa_finalize.o)
+    0x0000033c   0x00000008   Code   RO         1123    .text               c_w.l(libspace.o)
+    0x00000344   0x00000008   Code   RO         1153    .text               c_w.l(rt_heap_descriptor_intlibspace.o)
+    0x0000034c   0x00000004   Code   RO         1155    .text               c_w.l(hguard.o)
+    0x00000350   0x0000008a   Code   RO         1157    .text               c_w.l(init_alloc.o)
+    0x000003da   0x0000000e   Code   RO         1163    .text               c_w.l(h1_init.o)
+    0x000003e8   0x0000004e   Code   RO         1165    .text               c_w.l(h1_free.o)
+    0x00000436   0x00000002   PAD
+    0x00000438   0x0000000c   Code   RO         1207    .text               c_w.l(sys_exit.o)
+    0x00000444   0x0000004a   Code   RO         1209    .text               c_w.l(sys_stackheap_outer.o)
+    0x0000048e   0x00000034   Code   RO         1215    .text               c_w.l(h1_extend.o)
+    0x000004c2   0x0000000e   Code   RO         1219    .text               c_w.l(defsig_rtmem_outer.o)
+    0x000004d0   0x00000002   Code   RO         1239    .text               c_w.l(use_no_semi.o)
+    0x000004d2   0x00000000   Code   RO         1241    .text               c_w.l(indicate_semi.o)
+    0x000004d2   0x0000000a   Code   RO         1246    .text               c_w.l(defsig_exit.o)
+    0x000004dc   0x00000050   Code   RO         1248    .text               c_w.l(defsig_rtmem_inner.o)
+    0x0000052c   0x00000032   Code   RO         1256    .text               c_w.l(defsig_general.o)
+    0x0000055e   0x0000000e   Code   RO         1258    .text               c_w.l(sys_wrch.o)
+    0x0000056c   0x00000014   Code   RO           80    i.SysTick_Handler   bthread.o
+    0x00000580   0x00000010   Code   RO          950    i.SystemInit        system_armcm3.o
+    0x00000590   0x00000008   Code   RO          283    i._ZN11smartthread11SmartThread13timers_threadEPv  main.o
+    0x00000598   0x000000c8   Code   RO          289    i._ZN11smartthread11SmartThread6setEnvEPv  main.o
+    0x00000660   0x00000004   Code   RO          295    i._ZN11smartthread11SmartThreadD1Ev  main.o
+    0x00000664   0x00000044   Code   RO          271    i._ZN11smartthread4TaskC1EPFYPvS1_ES1_PNS_10ThreadPoolE  main.o
+    0x000006a8   0x00000040   Code   RO          277    i._ZN11smartthread5TimerC1EjjPFYPvS1_ES1_10bTimerType  main.o
+    0x000006e8   0x00000070   Code   RO          254    i.__sti___8_Main_cpp_b48cbc19  main.o
+    0x00000758   0x0000000c   Code   RO           81    i.bbitmap_clear     bthread.o
+    0x00000764   0x00000058   Code   RO           83    i.bbitmap_get_firstset  bthread.o
+    0x000007bc   0x00000006   Code   RO           84    i.bbitmap_init      bthread.o
+    0x000007c2   0x0000000c   Code   RO           85    i.bbitmap_set       bthread.o
+    0x000007ce   0x00000004   Code   RO          702    i.bcondition_init   bcondition.o
+    0x000007d2   0x00000002   PAD
+    0x000007d4   0x00000054   Code   RO          703    i.bcondition_notify  bcondition.o
+    0x00000828   0x0000004c   Code   RO          704    i.bcondition_wait   bcondition.o
+    0x00000874   0x00000010   Code   RO          516    i.bevent_init       bevent.o
+    0x00000884   0x00000034   Code   RO          517    i.bevent_remove     bevent.o
+    0x000008b8   0x0000004c   Code   RO          519    i.bevent_wait       bevent.o
+    0x00000904   0x0000001c   Code   RO          520    i.bevent_wait_count  bevent.o
+    0x00000920   0x00000054   Code   RO          521    i.bevent_wakeup     bevent.o
+    0x00000974   0x00000014   Code   RO          403    i.blist_add_last    blist.o
+    0x00000988   0x00000006   Code   RO          404    i.blist_count       blist.o
+    0x0000098e   0x0000000c   Code   RO          405    i.blist_first       blist.o
+    0x0000099a   0x0000000a   Code   RO          406    i.blist_init        blist.o
+    0x000009a4   0x0000001e   Code   RO          411    i.blist_remove      blist.o
+    0x000009c2   0x00000024   Code   RO          413    i.blist_remove_first  blist.o
+    0x000009e6   0x00000002   PAD
+    0x000009e8   0x00000094   Code   RO          726    i.bmemblock_all_init  bmemblock.o
+    0x00000a7c   0x0000003a   Code   RO          727    i.bmemblock_get_mem  bmemblock.o
+    0x00000ab6   0x00000060   Code   RO          728    i.bmemblock_init    bmemblock.o
+    0x00000b16   0x00000036   Code   RO          729    i.bmemblock_release_mem  bmemblock.o
+    0x00000b4c   0x00000014   Code   RO          648    i.bmutexlock_init   bmutex.o
+    0x00000b60   0x00000098   Code   RO          649    i.bmutexlock_lock   bmutex.o
+    0x00000bf8   0x0000001e   Code   RO          650    i.bmutexlock_lock_this  bmutex.o
+    0x00000c16   0x00000018   Code   RO          651    i.bmutexlock_release  bmutex.o
+    0x00000c2e   0x00000002   PAD
+    0x00000c30   0x00000094   Code   RO          652    i.bmutexlock_unlock  bmutex.o
+    0x00000cc4   0x0000001a   Code   RO          653    i.bmutexlock_wait   bmutex.o
+    0x00000cde   0x0000001c   Code   RO          654    i.bmutexlock_wait_count  bmutex.o
+    0x00000cfa   0x00000028   Code   RO          655    i.bmutexlock_wakeup  bmutex.o
+    0x00000d22   0x00000006   Code   RO          414    i.bnode_init        blist.o
+    0x00000d28   0x00000010   Code   RO          612    i.bsem_all_init     bsem.o
+    0x00000d38   0x00000012   Code   RO          613    i.bsem_init         bsem.o
+    0x00000d4a   0x00000002   PAD
+    0x00000d4c   0x00000044   Code   RO          614    i.bsem_notify       bsem.o
+    0x00000d90   0x00000040   Code   RO          615    i.bsem_wait         bsem.o
+    0x00000dd0   0x00000022   Code   RO          775    i.btask_init        bthreadpool.o
+    0x00000df2   0x00000066   Code   RO           86    i.bthread_create    bthread.o
+    0x00000e58   0x0000000c   Code   RO            5    i.bthread_enter_critical  switch.o
+    0x00000e64   0x0000000a   Code   RO            6    i.bthread_exit_critical  switch.o
+    0x00000e6e   0x00000002   PAD
+    0x00000e70   0x00000024   Code   RO           88    i.bthread_get_readyed  bthread.o
+    0x00000e94   0x00000012   Code   RO           89    i.bthread_get_ticks  bthread.o
+    0x00000ea6   0x00000002   PAD
+    0x00000ea8   0x00000034   Code   RO           90    i.bthread_ready     bthread.o
+    0x00000edc   0x0000001c   Code   RO            7    i.bthread_run_first  switch.o
+    0x00000ef8   0x0000003c   Code   RO           91    i.bthread_schedule  bthread.o
+    0x00000f34   0x00000058   Code   RO            8    i.bthread_set_systick_period  switch.o
+    0x00000f8c   0x000000a4   Code   RO           93    i.bthread_stack_init  bthread.o
+    0x00001030   0x00000010   Code   RO            9    i.bthread_switch    switch.o
+    0x00001040   0x00000044   Code   RO           95    i.bthread_systick_handler  bthread.o
+    0x00001084   0x00000038   Code   RO           96    i.bthread_time_wait  bthread.o
+    0x000010bc   0x00000020   Code   RO           97    i.bthread_time_wakeup  bthread.o
+    0x000010dc   0x00000044   Code   RO           98    i.bthread_unready   bthread.o
+    0x00001120   0x00000068   Code   RO          776    i.bthreadpool_init  bthreadpool.o
+    0x00001188   0x00000028   Code   RO          777    i.bthreadpool_put_task  bthreadpool.o
+    0x000011b0   0x00000014   Code   RO          778    i.bthreadpool_run   bthreadpool.o
+    0x000011c4   0x0000003a   Code   RO          779    i.bthreadpool_take_task  bthreadpool.o
+    0x000011fe   0x00000002   PAD
+    0x00001200   0x00000068   Code   RO           99    i.bthreads_delayed_wakeup  bthread.o
+    0x00001268   0x00000008   Code   RO          100    i.bthreads_start    bthread.o
+    0x00001270   0x0000000c   Code   RO          566    i.btimer_in_systick  btimer.o
+    0x0000127c   0x0000005c   Code   RO          567    i.btimer_init       btimer.o
+    0x000012d8   0x00000038   Code   RO          568    i.btimer_run_nrt_in_systick  btimer.o
+    0x00001310   0x00000060   Code   RO          569    i.btimer_run_nrt_in_thread  btimer.o
+    0x00001370   0x00000048   Code   RO          570    i.btimer_run_rt     btimer.o
+    0x000013b8   0x00000010   Code   RO          873    i.delay             functions.o
+    0x000013c8   0x00000018   Code   RO          874    i.fun1              functions.o
+    0x000013e0   0x00000018   Code   RO          875    i.fun2              functions.o
+    0x000013f8   0x00000018   Code   RO          876    i.fun3              functions.o
+    0x00001410   0x00000014   Code   RO          877    i.fun4              functions.o
+    0x00001424   0x00000014   Code   RO          878    i.fun5              functions.o
+    0x00001438   0x0000001c   Code   RO          255    i.main              main.o
+    0x00001454   0x00000010   Code   RO          415    i.threads_all_list_init  blist.o
+    0x00001464   0x00000010   Code   RO          416    i.threads_delayed_init  blist.o
+    0x00001474   0x00000020   Code   RO          417    i.threads_readyed_init  blist.o
+    0x00001494   0x00000014   Code   RO          879    i.timer1            functions.o
+    0x000014a8   0x00000014   Code   RO          880    i.timer2            functions.o
+    0x000014bc   0x00000014   Code   RO          881    i.timer3            functions.o
+    0x000014d0   0x00000018   Code   RO          418    i.timers_init       blist.o
+    0x000014e8   0x00000100   Data   RO          101    .constdata          bthread.o
+    0x000015e8   0x00000020   Data   RO         1278    Region$$Table       anon$$obj.o
+    0x00001608   0x00000004   Data   RO          259    .init_array         main.o
+    0x0000160c   0x00000000   Data   RO         1006    .init_array         c_w.l(init_aeabi.o)
+
+
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x0000000c   Data   RW          102    .data               bthread.o
+    0x2000000c   0x00000020   Data   RW          882    .data               functions.o
+    0x2000002c   0x00000004   Data   RW          951    .data               system_armcm3.o
+
+
+    Execution Region ER_ZI (Base: 0x20000030, Size: 0x0000a6c0, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000030   0x00002088   Zero   RW          258    .bss                main.o
+    0x200020b8   0x000001a4   Zero   RW          419    .bss                blist.o
+    0x2000225c   0x00000014   Zero   RW          616    .bss                bsem.o
+    0x20002270   0x00007420   Zero   RW          730    .bss                bmemblock.o
+    0x20009690   0x00000060   Zero   RW         1124    .bss                c_w.l(libspace.o)
+    0x200096f0   0x00000c00   Zero   RW          940    HEAP                startup_armcm3.o
+    0x2000a2f0   0x00000400   Zero   RW          939    STACK               startup_armcm3.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       164         12          0          0          0       1908   bcondition.o
+       256          6          0          0          0       4004   bevent.o
+       208         18          0          0        420       5916   blist.o
+       356         58          0          0      29728       4542   bmemblock.o
+       468         10          0          0          0       4638   bmutex.o
+       166         18          0          0         20       2640   bsem.o
+       906         68        256         12          0      11868   bthread.o
+       256         14          0          0          0       3085   bthreadpool.o
+       328         36          0          0          0       4005   btimer.o
+       188         38          0         32          0       4084   functions.o
+       484         80          4          0       8328      15201   main.o
+        64         26        192          0       4096        812   startup_armcm3.o
+       202         32          0          0          0      36954   switch.o
+        16          8          0          4          0        607   system_armcm3.o
+
+    ----------------------------------------------------------------------
+      4076        424        484         48      42592     100264   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        14          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        52          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        46          0          0          0          0         84   aeabi_atexit.o
+        66          0          0          0          0         84   cxa_finalize.o
+        10          0          0          0          0         68   defsig_exit.o
+        50          0          0          0          0         88   defsig_general.o
+        80         58          0          0          0         76   defsig_rtmem_inner.o
+        14          0          0          0          0         80   defsig_rtmem_outer.o
+        18          0          0          0          0         80   exit.o
+        94          0          0          0          0         80   h1_alloc.o
+        52          0          0          0          0         68   h1_extend.o
+        78          0          0          0          0         80   h1_free.o
+        14          0          0          0          0         84   h1_init.o
+         6          0          0          0          0        152   heapauxi.o
+         4          0          0          0          0        136   hguard.o
+         0          0          0          0          0          0   indicate_semi.o
+        36         10          0          0          0         80   init_aeabi.o
+       138          0          0          0          0        168   init_alloc.o
+         2          0          0          0          0          0   libinit.o
+        14          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         8          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+         0          0          0          0          0          0   maybetermalloc1.o
+         8          4          0          0          0         68   rt_ddtor_pointer_addr_intlibspace.o
+         8          4          0          0          0         68   rt_heap_descriptor_intlibspace.o
+        78          0          0          0          0         80   rt_memclr_w.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+        14          0          0          0          0         76   sys_wrch.o
+         2          0          0          0          0         68   use_no_semi.o
+
+    ----------------------------------------------------------------------
+      1084         92          0          0         96       2052   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      1080         92          0          0         96       2052   c_w.l
+
+    ----------------------------------------------------------------------
+      1084         92          0          0         96       2052   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      5160        516        484         48      42688      97008   Grand Totals
+      5160        516        484         48      42688      97008   ELF Image Totals
+      5160        516        484         48          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 5644 (   5.51kB)
+    Total RW  Size (RW Data + ZI Data)             42736 (  41.73kB)
+    Total ROM Size (Code + RO Data + RW Data)       5692 (   5.56kB)
+
+==============================================================================
+

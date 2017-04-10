@@ -1,0 +1,16 @@
+.\objects\bmemblock.o: Source\bMemBlock.c
+.\objects\bmemblock.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\bmemblock.o: Source\bMemBlock.h
+.\objects\bmemblock.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\bmemblock.o: Source\bList.h
+.\objects\bmemblock.o: Source\bConfig.h
+.\objects\bmemblock.o: Source\bTypes.h
+.\objects\bmemblock.o: Source\bCondition.h
+.\objects\bmemblock.o: Source\bMutex.h
+.\objects\bmemblock.o: Source\bEvent.h
+.\objects\bmemblock.o: Source\switch.h
+.\objects\bmemblock.o: Source\bThread.h
+.\objects\bmemblock.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\bmemblock.o: Source\bThreadPool.h
+.\objects\bmemblock.o: Source\bTimer.h
+.\objects\bmemblock.o: Source\bSem.h
